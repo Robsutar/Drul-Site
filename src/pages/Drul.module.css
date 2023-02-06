@@ -5,34 +5,33 @@
     height: 100vh;
     background: #353b48;
     overflow: hidden;
-    font-size: 20vw;
+    font-size: 30vw;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .drul_floating_3d p{
-    transition: 10s;
     transform:skew(6deg);
     color: rgba(36, 116, 101, 0.6);
     text-shadow:
-    -14px 14px 0 rgb(56, 200, 184),
-    -1px 1px 0 rgb(56, 200, 184),
-    -2px 2px 0 rgb(56, 200, 184),
-    -3px 3px 0 rgb(56, 200, 184),
-    -4px 4px 0 rgb(56, 200, 184),
-    -5px 5px 0 rgb(56, 200, 184),
-    -6px 6px 0 rgb(56, 200, 184),
-    -7px 7px 0 rgb(56, 200, 184),
-    -8px 8px 0 rgb(56, 200, 184),
-    -9px 9px 0 rgb(56, 200, 184),
-    -10px 10px 0 rgb(56, 200, 184),
-    -11px 11px 0 rgb(56, 200, 184),
-    -12px 12px 0 rgb(56, 200, 184),
-    -13px 13px 0 rgb(56, 200, 184),
-    -14px 14px 0 rgb(56, 200, 184),
-    -15px 15px 0 rgb(56, 200, 184),
-    -16px 16px 0 rgb(56, 200, 184),
-    -17px 17px 0 rgb(56, 200, 184),
-    -18px 18px 0 rgb(56, 200, 184),
-    -19px 19px 0 rgb(56, 200, 184),
+    -14px 14px 0 rgb(18, 18, 18),
+    -1px 1px 0 rgb(18, 18, 18),
+    -2px 2px 0 rgb(18, 18, 18),
+    -3px 3px 0 rgb(18, 18, 18),
+    -4px 4px 0 rgb(18, 18, 18),
+    -5px 5px 0 rgb(18, 18, 18),
+    -6px 6px 0 rgb(18, 18, 18),
+    -7px 7px 0 rgb(18, 18, 18),
+    -8px 8px 0 rgb(18, 18, 18),
+    -9px 9px 0 rgb(18, 18, 18),
+    -10px 10px 0 rgb(18, 18, 18),
+    -11px 11px 0 rgb(18, 18, 18),
+    -12px 12px 0 rgb(18, 18, 18),
+    -13px 13px 0 rgb(18, 18, 18),
+    -14px 14px 0 rgb(18, 18, 18),
+    -15px 15px 0 rgb(18, 18, 18),
+    -16px 16px 0 rgb(18, 18, 18),
+    -17px 17px 0 rgb(18, 18, 18),
+    -18px 18px 0 rgb(18, 18, 18),
+    -19px 19px 0 rgb(18, 18, 18),
     -15px 15px 35px rgba(0, 0, 0, 0.2),
     -35px 15px 10px rgba(0, 0, 0, 0.1);
 }
