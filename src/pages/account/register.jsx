@@ -1,4 +1,3 @@
-const apiLink = 'https://drul-api.vercel.app';
 const axios = require('axios');
 const minUsername = 3;
 const maxUsername = 24;
@@ -6,6 +5,7 @@ const minEmail = 3;
 const maxEmail = 254;
 const minPassword = 6;
 const maxPassword = 20;
+const defaultButtonColor = 'blue'
 export default function Register(){
     
     const verifyLenght = (fieldName,dataField,min,max)=>{
@@ -28,7 +28,9 @@ export default function Register(){
         e.preventDefault();
         const formData = new FormData(e.target);
         const data = Object.fromEntries(formData);
-        console.log(data);
+
+        const button = document.querySelector("#submitButton");
+        button.style.backgroundColor = defaultButtonColor
 
         if (
             verifyLenght("Username",data.username,minUsername,maxUsername)&&
@@ -38,17 +40,21 @@ export default function Register(){
             if(data.terms=="on"){
                 document.querySelector("#smallTerms").innerHTML = "";
 
-                axios.get(apiLink+'/api/account', {
-                    filters:{
-                        email: "closeeLindarsrs@gmail.com",
-                        password: "idroqHNT$9760"
-                    }
-                  })
+                //button.disabled = true;
+                button.innerHTML = "Sending..."
+                axios.post('/api/account',{
+                    email:data.email,
+                    password:data.password,
+                    playerName:data.username
+                })
                   .then(function (response) {
-                    console.log(response);
+                    button.disabled = true;
+                    button.innerHTML = response.data.message;
                   })
                   .catch(function (error) {
                     console.error(error);
+                    button.style.backgroundColor = 'red'
+                    button.innerHTML = error.response.data.message;
                   })
             }else{
                 document.querySelector("#smallTerms").innerHTML = "You need to accept the terms";
@@ -107,7 +113,7 @@ export default function Register(){
                                     <small style={{color:'red'}} id="smallTerms"></small>
                                 </div>
                                 <br></br>
-                                <button id="submitButton" style={{width:'100%'}} type="submit" className="btn btn-primary">Create your account</button>
+                                <button id="submitButton" style={{width:'100%',backgroundColor:defaultButtonColor}} type="submit" className="btn btn-primary">Create your account</button>
                             </div>
                             <a href="./login">Log in</a>
                         </form>
