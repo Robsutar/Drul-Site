@@ -8,7 +8,7 @@ export default function Home(){
         <Layout>
             <div>
                 <div className={styles.videoAndInfo}>
-                    <video className={styles.video} loop /*autoPlay*/ muted>
+                    <video className={styles.video} loop autoPlay muted>
                         <source src="videos/makima.mp4#t=11.8" type="video/mp4"></source>
                     </video>
                     <div className={'container d-flex align-items-center justify-content-center h-100 '+styles.aboveVideo}  style={{gridColumn: 1,gridRow: 1}}>
