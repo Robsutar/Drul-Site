@@ -1,9 +1,11 @@
+import {getSession} from "../../lib/session"
+const axios = require('axios');
+const minUsername = 3;
+const maxUsername = 24;
+const minPassword = 6;
+const maxPassword = 20;
 export default function(){
     
-    const minUsername = 3;
-    const maxUsername = 24;
-    const minPassword = 6;
-    const maxPassword = 20;
 
     const verifyLenght = (fieldName,dataField,min,max)=>{
         var ob = document.querySelector("#small"+fieldName)
@@ -25,13 +27,25 @@ export default function(){
         e.preventDefault();
         const formData = new FormData(e.target);
         const data = Object.fromEntries(formData);
-        console.log(data);
 
         if (
             verifyLenght("Username",data.username,minUsername,maxUsername)&&
             verifyLenght("Password",data.password,minPassword,maxPassword)
         ){
-            console.log('armou')
+            axios.get('/api/account',{
+                params:{
+                    filters:{
+                        email:data.email,
+                        password:data.password,
+                    }
+                }
+            })
+            .then(function (response) {
+                console.log("res: "+response.data.message)
+                })
+            .catch(function (error) {
+                console.log("err: "+error.response.data.message)
+              })
         }
     }
     return (

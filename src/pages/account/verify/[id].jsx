@@ -10,7 +10,6 @@ export default function Verify(){
         changeMessage(response.data.message)
     })
     .catch((error)=>{
-        console.log(error);
         changeMessage(error.response.data.message)
     })
     return (

@@ -40,19 +40,17 @@ export default function Register(){
             if(data.terms=="on"){
                 document.querySelector("#smallTerms").innerHTML = "";
 
-                //button.disabled = true;
+                button.disabled = true;
                 button.innerHTML = "Sending..."
                 axios.post('/api/account',{
                     email:data.email,
                     password:data.password,
-                    playerName:data.username
                 })
-                  .then(function (response) {
-                    button.disabled = true;
+                .then(function (response) {
                     button.innerHTML = response.data.message;
-                  })
-                  .catch(function (error) {
-                    console.error(error);
+                    })
+                .catch(function (error) {
+                    button.disabled = false;
                     button.style.backgroundColor = 'red'
                     button.innerHTML = error.response.data.message;
                   })

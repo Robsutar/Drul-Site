@@ -1,35 +1,44 @@
-import React from 'react';
-import styles from './Drul.module.css'
+import React from "react";
+import Layout from "../components/Layout";
+import styles from "../styles/pages/index.module.scss"
+import { Tabs,Tab } from "react-bootstrap";
 
-class DrulFloating3D extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    componentDidMount() {
-        var ob = document.querySelector("#df3d");
-        var backg = document.querySelector("#backg");
-        ob.style.transition = '0.1s';
-        backg.style.transition = '0.1s';
-        var hsl = 0;
-        
-        function animTick() {
-            hsl+=9;
-            if (hsl>360)
-                hsl = 0;
-            ob.style.color = 'hsl('+(hsl+8)+', 100%, 50%)';
-            backg.style.backgroundColor = 'hsl('+hsl+', 100%, 50%)';
-        }
-        setInterval(animTick, 100);
-    }
-    componentWillUnmount() {
-        clearInterval(this.interval);
-    }
-    render() {
-        return (
-            <div id='backg' className={styles.drul_floating_3d}>
-                <p id='df3d' className='drul-floating-3d-text'>DRUL</p>
+export default function Home(){
+    return(
+        <Layout>
+            <div>
+                <div className={styles.videoAndInfo}>
+                    <video className={styles.video} loop /*autoPlay*/ muted>
+                        <source src="videos/makima.mp4#t=11.8" type="video/mp4"></source>
+                    </video>
+                    <div className={'container d-flex align-items-center justify-content-center h-100 '+styles.aboveVideo}  style={{gridColumn: 1,gridRow: 1}}>
+                        <div className={styles.centerInfoDiv}>
+                            <h1>D R U L</h1>
+                            <h2>Rhythm game of your dreams</h2>
+                            <button>Play now</button>
+                        </div>
+                    </div>
+                </div>
+                <div className="container">
+                    <h2>Download Drul</h2>
+                    <Tabs defaultActiveKey={1} id="uncontrolled-tab-example" bg="light" >
+                        <Tab eventKey={1} title="Windows">
+                            <div className="container">
+                                <p>Downlo</p>
+                            </div>
+                        </Tab>
+                        <Tab eventKey={2} title="Android">
+                            <p>Currently unavailable, come back soon!</p>
+                        </Tab>
+                        <Tab eventKey={3} title="MacOS">
+                            <p>Currently unavailable, come back soon!</p>
+                        </Tab>
+                        <Tab eventKey={4} title="Linux">
+                            <p>Currently unavailable, come back soon!</p>
+                        </Tab>
+                    </Tabs>
+                </div>
             </div>
-        )
-    }
+        </Layout>
+    )
 }
-export default DrulFloating3D
