@@ -8,11 +8,14 @@ export default function Home(){
         <Layout>
             <div>
                 <div className={styles.videoAndInfo}>
-                    <video className={styles.video} loop autoPlay muted>
-                        <source src="videos/makima.mp4#t=11.8" type="video/mp4"></source>
-                    </video>
-                    <div className={'container d-flex align-items-center justify-content-center h-100 '+styles.aboveVideo}  style={{gridColumn: 1,gridRow: 1}}>
+                    <div className={styles.video}>
+                        <video className={styles.cruVideo} loop autoPlay muted>
+                            <source src="videos/makima.mp4#t=11.8" type="video/mp4"></source>
+                        </video>
+                    </div>
+                    <div className={styles.aboveVideo}>
                         <div className={styles.centerInfoDiv}>
+                            <div style={{height:'26vh'}}></div>
                             <h1>D R U L</h1>
                             <h2>Rhythm game of your dreams</h2>
                             <button>Play now</button>
@@ -24,7 +27,7 @@ export default function Home(){
                     <Tabs defaultActiveKey={1} id="uncontrolled-tab-example" bg="light" >
                         <Tab eventKey={1} title="Windows">
                             <div className="container">
-                                <p>Downlo</p>
+                                <p>Download</p>
                             </div>
                         </Tab>
                         <Tab eventKey={2} title="Android">

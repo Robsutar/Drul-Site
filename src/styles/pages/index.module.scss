@@ -1,4 +1,12 @@
 @import '../variables.scss';
+
+.video,.aboveVideo{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 .aboveVideo {
     color: white;
     text-shadow: 2px 2px 8px black;
@@ -8,8 +16,7 @@
 }
 
 .centerInfoDiv{
-    position: absolute;
-    top: 300px;
+    top: 600px;
     text-align: center;
     opacity: 0.9;
 }
@@ -30,15 +37,22 @@
     transition: 0s;
     background: $contrast1;
 }
-.video{
-    overflow: hidden;
+.cruVideo{
     width: 100%;
     height: 100%;
+    overflow: hidden;
     object-fit: cover;
-    border-radius: 25px;
 }
 .videoAndInfo{
-    padding: 50px;
-    display: grid;
-    height:700px
+    height:80vh;
+    
+    position: relative;
+}
+@media (min-width:992px) { 
+    .video{
+        padding: 50px;
+    }
+    .cruVideo{
+        border-radius: 50px;
+    }
 }

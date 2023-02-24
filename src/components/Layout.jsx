@@ -24,26 +24,11 @@ class Layout extends Component{
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="me-auto">
                                 <Nav.Link href="#">Mods</Nav.Link>
-                                <Nav.Link href="#">Mumps</Nav.Link>
-                                <Nav.Link href="#">Colocations</Nav.Link>
-                            </Nav>
-                            <Nav className="me-auto">
-                                <Nav.Link href="#">Mods</Nav.Link>
-                                <Nav.Link href="#">Mumps</Nav.Link>
+                                <Nav.Link href="#">Mums</Nav.Link>
                                 <Nav.Link href="#">Colocations</Nav.Link>
                             </Nav>
                             <Nav>
-                                <NavDropdown title="Sign in" id="basic-nav-dropdown">
-                                    <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.2">
-                                        Another action
-                                    </NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                                    <NavDropdown.Divider />
-                                    <NavDropdown.Item href="#action/3.4">
-                                        Separated link
-                                    </NavDropdown.Item>
-                                </NavDropdown>
+                                <Nav.Link href="account/login">Sign in</Nav.Link>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>

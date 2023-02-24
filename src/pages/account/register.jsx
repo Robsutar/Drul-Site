@@ -69,12 +69,14 @@ export default function Register(){
             <div className="d-flex justify-content-center" style={{
                 padding:'50px',
             }}>
-                <h1 style={{
+                <a href="../" type="button"  style={{
                     color:"white",
                     fontSize:'50px',
                     fontFamily: "'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif",
-                    
-                }}>D R U L</h1>
+                    border:'none',
+                    backgroundColor:'transparent',
+                    textDecoration:'none'
+                }}>D R U L</a>
                 </div>
                 <div className="d-flex justify-content-center">
                     <div className="d-flex justify-content-center" style={{
